@@ -1,0 +1,30 @@
+[submodule "bundle/agit.vim"]
+	path = bundle/agit.vim
+	url = https://github.com/cohama/agit.vim
+[submodule "bundle/golden-ratio"]
+	path = bundle/golden-ratio
+	url = https://github.com/roman/golden-ratio
+[submodule "bundle/nvim-cm-racer"]
+	path = bundle/nvim-cm-racer
+	url = https://github.com/roxma/nvim-cm-racer.git
+[submodule "bundle/nvim-completion-manager"]
+	path = bundle/nvim-completion-manager
+	url = https://github.com/roxma/nvim-completion-manager.git
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "bundle/vim-filebeagle"]
+	path = bundle/vim-filebeagle
+	url = https://github.com/jeetsukumaran/vim-filebeagle.git
+[submodule "bundle/vim-markdown-composer"]
+	path = bundle/vim-markdown-composer
+	url = https://github.com/euclio/vim-markdown-composer
+[submodule "bundle/vim-quantum"]
+	path = bundle/vim-quantum
+	url = https://github.com/technetos/vim-quantum.git
+[submodule "bundle/vim-racer"]
+	path = bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer.git
+[submodule "bundle/vim-workspace"]
+	path = bundle/vim-workspace
+	url = https://github.com/thaerkh/vim-workspace
