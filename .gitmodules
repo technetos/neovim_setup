@@ -28,3 +28,6 @@
 [submodule "bundle/vim-workspace"]
 	path = bundle/vim-workspace
 	url = https://github.com/thaerkh/vim-workspace
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
