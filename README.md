@@ -2,7 +2,7 @@
 
 # Getting Started
 ```
-$ git clone https://github.com/technetos/dotvim.git ~/.config/nvim
+$ git clone https://github.com/technetos/neovim_setup.git ~/.config/nvim
 $ cd ~/.config/nvim
 $ git submodule update --init
 ```
