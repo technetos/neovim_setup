@@ -1,27 +1,42 @@
 " Load plugins for every FileType
 execute pathogen#interpose('bundle/agit.vim')
-execute pathogen#interpose('bundle/nvim-completion-manager')
+execute pathogen#interpose('bundle/deoplete.nvim')
 execute pathogen#interpose('bundle/vim-quantum')
 execute pathogen#interpose('bundle/vim-workspace')
 execute pathogen#interpose('bundle/vim-filebeagle')
 execute pathogen#interpose('bundle/golden-ratio')
-
+" -----------------------------------------------------------------------------
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources = {}
+" -----------------------------------------------------------------------------
 " Load plugins & configurations for rust
 autocmd FileType rust execute pathogen#interpose('bundle/rust.vim')
-autocmd FileType rust let g:rust_recommended_style = 0
-autocmd FileType rust execute pathogen#interpose('bundle/nvim-cm-racer')
-autocmd FileType rust let g:racer_experimental_completer = 1
+autocmd FileType rust execute pathogen#interpose('bundle/deoplete-rust')
 autocmd FileType rust execute pathogen#interpose('bundle/vim-racer')
+
+" Configure racer
+autocmd FileType rust let g:rust_recommended_style = 0
+autocmd FileType rust let g:racer_experimental_completer = 1
 autocmd FileType rust nnoremap <C-]> :call racer#GoToDefinition()<CR>
 autocmd FileType rust setlocal omnifunc=racer#RacerComplete
 
+" Configure deoplete
+autocmd FileType rust let g:deoplete#sources#rust#racer_binary='/home/plant/.cargo/bin/racer'
+autocmd FileType rust let g:deoplete#sources#rust#show_duplicates=0
+autocmd FileType rust let g:deoplete#sources.rust = ['rust']
+" -----------------------------------------------------------------------------
 " Load plugins for markdown
 autocmd FileType markdown execute pathogen#interpose('bundle/vim-markdown-composer')
 autocmd FileType markdown let g:markdown_composer_syntax_theme = 'ir_black'
 autocmd FileType markdown set spell spelllang=en_us
+" -----------------------------------------------------------------------------
 
 " Golden ratio autocmd off
 let g:golden_ratio_autocommand = 0
+
+" Dont auto create a workspace
+let g:workspace_autosave = 0
 
 set termguicolors
 
@@ -77,4 +92,3 @@ colorscheme quantum
 
 autocmd TermOpen * setlocal nonumber
 
-let g:workspace_autosave = 0

@@ -25,3 +25,9 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = https://github.com/shougo/deoplete.nvim
+[submodule "bundle/deoplete-rust"]
+	path = bundle/deoplete-rust
+	url = https://github.com/sebastianmarkow/deoplete-rust.git
