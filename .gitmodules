@@ -4,12 +4,6 @@
 [submodule "bundle/golden-ratio"]
 	path = bundle/golden-ratio
 	url = https://github.com/roman/golden-ratio
-[submodule "bundle/nvim-cm-racer"]
-	path = bundle/nvim-cm-racer
-	url = https://github.com/roxma/nvim-cm-racer.git
-[submodule "bundle/nvim-completion-manager"]
-	path = bundle/nvim-completion-manager
-	url = https://github.com/roxma/nvim-completion-manager.git
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
