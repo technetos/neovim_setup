@@ -9,6 +9,9 @@ execute pathogen#interpose('bundle/golden-ratio')
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources = {}
+
+" Disable scratch and preview window
+set completeopt=menu,menuone,longest
 " -----------------------------------------------------------------------------
 " Load plugins & configurations for rust
 autocmd FileType rust execute pathogen#interpose('bundle/rust.vim')
@@ -16,7 +19,6 @@ autocmd FileType rust execute pathogen#interpose('bundle/deoplete-rust')
 autocmd FileType rust execute pathogen#interpose('bundle/vim-racer')
 
 " Configure racer
-autocmd FileType rust let g:rust_recommended_style = 0
 autocmd FileType rust let g:racer_experimental_completer = 1
 autocmd FileType rust nnoremap <C-]> :call racer#GoToDefinition()<CR>
 autocmd FileType rust setlocal omnifunc=racer#RacerComplete
@@ -24,11 +26,13 @@ autocmd FileType rust setlocal omnifunc=racer#RacerComplete
 " Configure deoplete
 autocmd FileType rust let g:deoplete#sources#rust#racer_binary='/home/plant/.cargo/bin/racer'
 autocmd FileType rust let g:deoplete#sources#rust#show_duplicates=0
+autocmd FileType rust let g:deoplete#sources#rust#disable_keymap=1
 autocmd FileType rust let g:deoplete#sources.rust = ['rust']
+
 " -----------------------------------------------------------------------------
 " Load plugins for markdown
-autocmd FileType markdown execute pathogen#interpose('bundle/vim-markdown-composer')
-autocmd FileType markdown let g:markdown_composer_syntax_theme = 'ir_black'
+"autocmd FileType markdown execute pathogen#interpose('bundle/vim-markdown-composer')
+"autocmd FileType markdown let g:markdown_composer_syntax_theme = 'ir_black'
 autocmd FileType markdown set spell spelllang=en_us
 " -----------------------------------------------------------------------------
 
@@ -67,9 +71,6 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
-
-inoremap jj <Esc>
-tnoremap jj <C-\><C-n>  
 
 nmap ; :buffers<CR>
 nmap <Leader>m :marks<CR>
