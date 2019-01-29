@@ -12,7 +12,7 @@ let g:deoplete#sources = {}
 
 " Disable scratch and preview window
 "set completeopt=menu,menuone,longest
-set completeopt=preview,menuone,longest
+set completeopt=menuone,longest
 " -----------------------------------------------------------------------------
 " Load plugins & configurations for rust
 autocmd FileType rust execute pathogen#interpose('bundle/rust.vim')
