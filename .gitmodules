@@ -31,3 +31,6 @@
 [submodule "bundle/deoplete-rust"]
 	path = bundle/deoplete-rust
 	url = https://github.com/sebastianmarkow/deoplete-rust.git
+[submodule "bundle/tig"]
+	path = bundle/tig
+	url = https://github.com/jonas/tig
