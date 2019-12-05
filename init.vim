@@ -30,6 +30,9 @@ autocmd FileType rust let g:deoplete#sources#rust#show_duplicates=0
 autocmd FileType rust let g:deoplete#sources#rust#disable_keymap=1
 autocmd FileType rust let g:deoplete#sources.rust = ['rust']
 autocmd FileType rust let g:deoplete#sources.disabled_syntaxes = ['member', 'omni', 'buffer', 'around', 'dictionary']
+autocmd FileType rust let g:racer_disable_errors = 1
+" Disable error output from racer because its annoying
+autocmd FileType rust call deoplete#custom#option('check_stderr', 0)
 
 " -----------------------------------------------------------------------------
 " Load plugins for markdown
