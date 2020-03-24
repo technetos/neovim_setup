@@ -1,18 +1,9 @@
-[submodule "bundle/agit.vim"]
-	path = bundle/agit.vim
-	url = https://github.com/cohama/agit.vim
-[submodule "bundle/golden-ratio"]
-	path = bundle/golden-ratio
-	url = https://github.com/roman/golden-ratio
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule "bundle/vim-filebeagle"]
 	path = bundle/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
-[submodule "bundle/vim-markdown-composer"]
-	path = bundle/vim-markdown-composer
-	url = https://github.com/euclio/vim-markdown-composer
 [submodule "bundle/vim-quantum"]
 	path = bundle/vim-quantum
 	url = https://github.com/technetos/vim-quantum.git
@@ -31,6 +22,3 @@
 [submodule "bundle/deoplete-rust"]
 	path = bundle/deoplete-rust
 	url = https://github.com/sebastianmarkow/deoplete-rust.git
-[submodule "bundle/tig"]
-	path = bundle/tig
-	url = https://github.com/jonas/tig

@@ -1,10 +1,8 @@
 " Load plugins for every FileType
-execute pathogen#interpose('bundle/agit.vim')
 execute pathogen#interpose('bundle/deoplete.nvim')
 execute pathogen#interpose('bundle/vim-quantum')
 execute pathogen#interpose('bundle/vim-workspace')
 execute pathogen#interpose('bundle/vim-filebeagle')
-execute pathogen#interpose('bundle/golden-ratio')
 " -----------------------------------------------------------------------------
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
@@ -38,9 +36,6 @@ autocmd FileType rust call deoplete#custom#option('check_stderr', 0)
 " Load plugins for markdown
 autocmd FileType markdown set spell spelllang=en_us
 " -----------------------------------------------------------------------------
-
-" Golden ratio autocmd off
-let g:golden_ratio_autocommand = 0
 
 " Dont auto create a workspace
 let g:workspace_autosave = 0
