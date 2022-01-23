@@ -1,9 +1,9 @@
-[submodule "bundle/fantome"]
-  path = bundle/fantome
-  url = https://github.coom/technetos/fantome.git
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule "bundle/vim-filebeagle"]
 	path = bundle/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
+[submodule "bundle/fantome"]
+	path = bundle/fantome
+	url = https://github.com/technetos/fantome.git
