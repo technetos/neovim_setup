@@ -1,6 +1,7 @@
 execute pathogen#interpose('bundle/fantome')
 execute pathogen#interpose('bundle/vim-filebeagle')
 execute pathogen#interpose('bundle/nvim-lspconfig')
+execute pathogen#interpose('bundle/rust.vim')
 
 colorscheme fantome
 
