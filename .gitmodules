@@ -1,24 +1,9 @@
+[submodule "bundle/fantome"]
+  path = bundle/fantome
+  url = https://github.coom/technetos/fantome.git
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule "bundle/vim-filebeagle"]
 	path = bundle/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
-[submodule "bundle/vim-quantum"]
-	path = bundle/vim-quantum
-	url = https://github.com/technetos/vim-quantum.git
-[submodule "bundle/vim-racer"]
-	path = bundle/vim-racer
-	url = https://github.com/racer-rust/vim-racer.git
-[submodule "bundle/vim-workspace"]
-	path = bundle/vim-workspace
-	url = https://github.com/thaerkh/vim-workspace
-[submodule "bundle/vim-scala"]
-	path = bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala
-[submodule "bundle/deoplete.nvim"]
-	path = bundle/deoplete.nvim
-	url = https://github.com/shougo/deoplete.nvim
-[submodule "bundle/deoplete-rust"]
-	path = bundle/deoplete-rust
-	url = https://github.com/sebastianmarkow/deoplete-rust.git
