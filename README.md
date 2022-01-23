@@ -27,7 +27,7 @@ git pull origin master
 git submodule foreach git pull origin master
 ```
 
-# Add a plugin
+# Add a Plugin
 Navigate to the bundle directory
 ```
 cd ~/.config/nvim/bundle
@@ -45,7 +45,7 @@ execute pathogen#interpose('bundle/plugin')
 
 Commit the changes
 
-# Remove a plugin
+# Remove a Plugin
 Remove the entry in `.gitmodules`, the entry will look something like the
 following
 
