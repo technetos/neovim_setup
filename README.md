@@ -22,10 +22,14 @@ cd ~/.config/nvim/bundle/plugin
 git pull origin master
 ```
 
+Commit the changes
+
 # Update All Plugins
 ```
 git submodule foreach git pull origin master
 ```
+
+Commit the changes
 
 # Add a Plugin
 Navigate to the bundle directory
