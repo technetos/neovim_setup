@@ -1,41 +1,58 @@
-" Load plugins for every FileType
-execute pathogen#interpose('bundle/vim-quantum')
-execute pathogen#interpose('bundle/vim-workspace')
+execute pathogen#interpose('bundle/fantome')
 execute pathogen#interpose('bundle/vim-filebeagle')
-" -----------------------------------------------------------------------------
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {}
+execute pathogen#interpose('bundle/nvim-lspconfig')
 
-" Disable scratch and preview window
-"set completeopt=menu,menuone,longest
-set completeopt=menuone,longest
-" -----------------------------------------------------------------------------
-" Load plugins & configurations for rust
-autocmd FileType rust execute pathogen#interpose('bundle/rust.vim')
-autocmd FileType rust execute pathogen#interpose('bundle/vim-racer')
+colorscheme fantome
 
-" Configure racer
-autocmd FileType rust let g:racer_experimental_completer = 1
-autocmd FileType rust nnoremap <C-]> :call racer#GoToDefinition()<CR>
-autocmd FileType rust setlocal omnifunc=racer#RacerComplete
-autocmd FileType rust let g:racer_disable_errors = 1
+lua << EOF
+local nvim_lsp = require'lspconfig'
 
-" -----------------------------------------------------------------------------
-" Load plugins for markdown
+nvim_lsp.rust_analyzer.setup({
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    focusable = false,
+  }
+}, nil)
+EOF
+
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+
+" Show diagnostic popup on cursor hover
+autocmd CursorHold * lua vim.diagnostic.open_float()
+
+" Spell check markdown
 autocmd FileType markdown set spell spelllang=en_us
-" -----------------------------------------------------------------------------
 
-" Dont auto create a workspace
-let g:workspace_autosave = 0
+" have a fixed column for the diagnostics to appear in
+" this removes the jitter when warnings/errors flow in
+set signcolumn=yes
 
 set termguicolors
 
-set autoindent
 set number
 set nobackup
 set noswapfile
 set noundofile
+set autoindent
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -56,18 +73,23 @@ set hidden
 " Disable mouse support
 set mouse=
 
+" Disable scratch and preview window
+set completeopt=menuone,longest
+
+" ctrl + hjkl to navigate between splits
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 
+" Some useful bindings on leader
 nmap ; :buffers<CR>
 nmap <Leader>m :marks<CR>
 nmap <Leader>t :files<CR>
 nmap <Leader>r :tags<CR>
-nmap <Leader>s :ToggleWorkspace<CR>
 nmap <Leader>e :reg<CR>
 
+" Clear all buffers except the current one
 function! BufOnly()
   let curr = bufnr("%")
   let last = bufnr("$")
@@ -76,10 +98,10 @@ function! BufOnly()
   if curr < last | silent! execute (curr+1).",".last."bd" | endif
 endfunction
 
+" A binding on leader to clear the buffers
 nmap <Leader>b :call BufOnly()<CR>
 
-colorscheme quantum
-
+" Turn off line numbering in the terminal
 autocmd TermOpen * setlocal nonumber
 
 " The main window stays where it is when a preview
@@ -96,6 +118,3 @@ function! PreviewWindowLeaveMove()
     normal! `xzt``
   endif
 endfunction
-    
-autocmd * WinEnter call PreviewWindowEnterMove()
-autocmd * BufDelete call PreviewWindowLeaveMove()
