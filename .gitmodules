@@ -7,3 +7,6 @@
 [submodule "bundle/fantome"]
 	path = bundle/fantome
 	url = https://github.com/technetos/fantome.git
+[submodule "bundle/nvim-lspconfig"]
+	path = bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
