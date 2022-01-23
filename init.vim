@@ -1,7 +1,9 @@
 execute pathogen#interpose('bundle/fantome')
 execute pathogen#interpose('bundle/vim-filebeagle')
 execute pathogen#interpose('bundle/nvim-lspconfig')
-execute pathogen#interpose('bundle/rust.vim')
+
+" Load the rust plugin if the file type is rust
+autocmd FileType rust execute pathogen#interpose('bundle/rust.vim')
 
 colorscheme fantome
 
