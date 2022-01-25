@@ -121,3 +121,6 @@ function! PreviewWindowLeaveMove()
     normal! `xzt``
   endif
 endfunction
+
+autocmd WinEnter * call PreviewWindowEnterMove()
+autocmd WinLeave * call PreviewWindowLeaveMove()
