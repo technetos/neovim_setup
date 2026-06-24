@@ -29,26 +29,25 @@ require('nvim-treesitter.configs').setup({
   }
 })
 
-require('lspconfig').rust_analyzer.setup({
-    on_attach = on_attach,
+vim.lsp.config('rust_analyzer', {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         ["rust-analyzer"] = {
-            diagnostics = {
-              enable = true
-            },
-            assist = {
-                importGranularity = "module",
-                importPrefix = "by_self",
-            },
-            cargo = {
-                loadOutDirsFromCheck = true
-            },
-            procMacro = {
-                enable = true
+            cargo = { allFeatures = true, buildScripts = { enable = true } },
+            checkOnSave = true,
+            check = { command = "clippy" },
+            procMacro = { enable = true },
+            imports = { granularity = { group = "module" }, prefix = "self" },
+            inlayHints = {
+                bindingModeHints = { enable = true },
+                closureReturnTypeHints = { enable = "always" },
             },
         }
     }
 })
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.inlay_hint.enable(true)
 
 vim.diagnostic.config({
   virtual_text = false,
